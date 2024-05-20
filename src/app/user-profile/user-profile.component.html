@@ -1,0 +1,884 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div>
+
+
+      <div class="">
+        <div class="">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">MIS DATOS</span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+
+              <div class="tab-content">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                        <div>
+                          <h1 style="font-size:20px">Añadir un nuevo granjero</h1>
+                        </div>
+
+                        <div class="input-group-append" (click)="opensolo2(granjero)">
+                          <button type="button" class="btn btn-success" style="    margin-top: -2%;margin-left: 50%;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                              <path
+                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                              <path
+                                d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <table class="table table-hover">
+                  <thead class="text-warning">
+
+                    <th>granjeroId </th>
+                    <th>Nombre </th>
+                    <th>Apellido </th>
+                    <th>Email</th>
+                    <th>Editar</th>
+                    <th>eliminar</th>
+
+                  </thead>
+                  <tbody>
+
+                    <tr *ngFor="let dat of data">
+                      <td>{{dat.granjeroId}}</td>
+                      <td>{{dat.nombre}}</td>
+                      <td>{{dat.apellido}}</td>
+                      <td>{{dat.email}}</td>
+
+                      <td>
+                        <button type="button" class="btn btn-warning" (click)="open(name, dat.granjeroId)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path
+                              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                            <path
+                              d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
+                          </svg>
+                        </button>
+                      </td>
+                      <td>
+
+                        <button type="button" class="btn btn-danger"  (click)="eliminarRegistro3(dat.granjeroId)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path
+                              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                            <path
+                              d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
+                          </svg>
+                        </button>
+
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">MIS RECOLECTORES </span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="tab-content">
+
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="input-group mb-3">
+                        <h1 style="font-size:20px">Añadir un nuevo recolector</h1>
+                        <div class="input-group-append">
+                          <button type="button" class="btn btn-success" (click)="opensolo1(recolector)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                              class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                              <path
+                                d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                              <path
+                                d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+
+
+                <table class="table table-hover">
+                  <thead class="text-warning">
+                    <td>ID </td>
+                    <th>Nombre </th>
+                    <th>Apellido </th>
+                    <th>granjeroId </th>
+                    <th>Editar</th>
+                    <th>ELIMINAR</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let dat of data1">
+                      <td>{{dat.recolectorId}}</td>
+                      <td>{{dat.nombre}}</td>
+                      <td> {{dat.apellido}}</td>
+                      <td>{{dat.granjeroId}}</td>
+                      <td>
+
+
+                        <button type="button" class="btn btn-warning" (click)="open1(recolector1, dat.recolectorId)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-add" viewBox="0 0 16 16">
+                            <path
+                              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                            <path
+                              d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
+                          </svg>
+                        </button>
+                      </td>
+
+
+
+                      <td>
+                        <button type="button" class="btn btn-danger" (click)="eliminarRegistro2(dat.recolectorId)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-fill-dash" viewBox="0 0 16 16">
+                            <path
+                              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1m0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path
+                              d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                          </svg>
+                        </button>
+                      </td>
+
+
+                    </tr>
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-12">
+          <div class="card">
+            <div class="card-header card-header-warning">
+              <h4 class="card-title">Detalle de Recoleccion</h4>
+            </div>
+            <div class="card-body table-responsive">
+
+              <table class="table table-hover">
+                <thead class="text-warning">
+                  <th> detalleRecolectorId</th>
+                  <th> recoleccionId </th>
+                  <th> residuoId </th>
+                  <th> cantidad </th>
+
+                </thead>
+                <tbody>
+                  <tr *ngFor="let dat of data2">
+                    <td>{{dat.detalleRecolectorId}}</td>
+                    <td>{{dat.recoleccionId}}</td>
+                    <td>{{dat.residuoId}}</td>
+                    <td>{{dat.cantidad}}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="card">
+            <div class="card-header card-header-tabs card-header-primary" style="background: #234ecd;">
+              <div class="nav-tabs-navigation">
+                <div class="nav-tabs-wrapper">
+                  <span class="nav-tabs-title">RECOLECCION </span>
+                  <ul class="nav nav-tabs" data-tabs="tabs">
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="tab-content">
+                <table class="table table-hover">
+                  <thead class="text-warning">
+                    <td>recoleccionId</td>
+                    <td>recolectorId</td>
+                    <th>fecha </th>
+                    <th>descripcion </th>
+
+
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let dat of data3">
+                      <td>{{dat.recoleccionId}}</td>
+                      <td>{{dat.recolectorId}}</td>
+                      <td>{{dat.fecha}}</td>
+                      <td> {{dat.descripcion}}</td>
+
+
+
+
+                    </tr>
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="card">
+            <div class="card-header card-header-warning">
+              <h4 class="card-title">Estado</h4>
+            </div>
+            <div class="card-body table-responsive">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="input-group mb-3">
+                      <h1 style="font-size:20px">Añadir un nuevo estado</h1>
+                      <div class="input-group-append">
+                        <button type="button" class="btn btn-success" (click)="opensolo(estadoagregar)">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                            <path
+                              d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path
+                              d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <table class="table table-hover">
+                <thead class="text-warning">
+                  <th> estadoId</th>
+                  <th> nombre </th>
+                  <th> descripcion </th>
+                  <th>editar </th>
+                  <th>eliminar </th>
+
+                </thead>
+                <tbody>
+                  <tr *ngFor="let dat of data4">
+                    <td>{{dat.estadoId}}</td>
+                    <td>{{dat.nombre}}</td>
+                    <td>{{dat.descripcion}}</td>
+                    <td>
+
+                      <button type="button" class="btn btn-warning" (click)="open2(estado, dat.estadoId)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-person-add" viewBox="0 0 16 16">
+                          <path
+                            d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                          <path
+                            d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z" />
+                        </svg>
+                      </button>
+                    </td>
+
+
+
+                    <td>
+                      <button type="button" class="btn btn-danger" (click)="eliminarRegistro1(dat.estadoId)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                          class="bi bi-person-fill-dash" viewBox="0 0 16 16">
+                          <path
+                            d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1m0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                          <path
+                            d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4" />
+                        </svg>
+                      </button>
+
+
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- aqui empieza los formularios de granjero -->
+
+<ng-template #name let-modal style="width: 110%;">
+
+
+  <form  (ngSubmit)="actualizarGranjero()">
+    <div>
+
+      <div class="modal-header">
+
+        <h4> actualizar un Granjero</h4>
+        <button type="button" class="bi bi-x-lg" (click)="modal.dismiss()">
+
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div>
+
+          <div>
+            <div>
+              <h4> id del granjero = {{miObjeto.granjeroId}}</h4>
+    
+                
+              <input class="form-control" type="number" id="recolectgranjeroIdorId" [(ngModel)]="granjeroId" name="granjeroId"
+              required>
+
+
+            </div>
+          </div>
+
+
+
+          <div class="row justify-content-start mt-4">
+            <div class="col-4">
+              <div>
+                <h4>Nombre = {{miObjeto.nombre}}</h4>
+          
+              <input class="form-control" type="string" id="recolenombrectorId" [(ngModel)]="nombre" name="nombre"
+              required>
+              </div>
+
+
+            </div>
+            <div class="col-4">
+              <div>
+                <h4>Apellido = {{miObjeto.apellido}}</h4>
+                
+
+                  <input class="form-control" type="string" id="apellido" [(ngModel)]="apellido" name="apellido"
+                  required>
+
+
+              </div>
+            </div>
+            <div class="col-4">
+              <div>
+                <h4>email = {{miObjeto.email}}</h4>
+               
+
+                  <input class="form-control" type="string" id="email" [(ngModel)]="email" name="email"
+                  required>
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-start mt-4">
+            <div class="col-4">
+              <div>
+                <h4>contraseña  </h4>
+               
+
+                  <input class="form-control" type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena"
+                  required>
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="container mt-5" style="width: 150%;">
+
+
+
+            <div class="row justify-content-start mt-4">
+
+
+              <div class="col-4">
+                <div *ngFor="let dat of miArray1">
+                  <h4> contraseña</h4>
+                  <input class="form-control" type="text" id="apell1_persona" [(ngModel)]="dat.contrasena"
+                    formControlName="apell1_persona" required>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" type="submit">actualizar</button>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss()">cancelar</button>
+
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+
+<ng-template #granjero let-modal style="width: 110%;">
+
+
+  <form (ngSubmit)="agregarGranjero()">
+    <div>
+
+      <div class="modal-header">
+
+        <h4> agregar un granjero </h4>
+        <button type="button" class="bi bi-x-lg" (click)="modal.dismiss()">
+
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div>
+
+          <div class="container" style="width: 150%;">
+
+            <div class="row justify-content-start">
+        
+              <div class="col-4">
+                <div>
+
+                  <h4> Nombre</h4>
+
+                  <input class="form-control" type="text" id="nombre1" [(ngModel)]="nombre" name="nombre1" required>
+                </div>
+              </div>
+              
+
+
+
+            </div>
+
+            <div class="row justify-content-start" style="margin-top:5%">
+             
+              <div class="col-4">
+                <div>
+
+                  <h4> Apellido</h4>
+
+                  <input class="form-control" type="text" id="apellido" [(ngModel)]="apellido" name="apellido" required>
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div>
+
+                  <h4> Email</h4>
+
+                  <input class="form-control" type="text" id="email" [(ngModel)]="email" name="email" required>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="row justify-content-start" style="margin-top:5%">
+             
+              <div class="col-4">
+                <div>
+
+                  <h4> Contraseña</h4>
+
+                  <input class="form-control" type="password" id="contraseña" [(ngModel)]="contrasena" name="contraseña" required>
+                </div>
+              </div>
+
+          
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" type="submit">agregar</button>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss()">cancelar</button>
+
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+
+
+
+
+<!-- aqui empieza los formularios de recolector -->
+
+<ng-template #recolector1 let-modal style="width: 110%;">
+
+
+  <form (ngSubmit)="actualizarRecolector()">
+    <div>
+
+      <div class="modal-header">
+
+        <h4> actualizar un recolector</h4>
+        <button type="button" class="bi bi-x-lg" (click)="modal.dismiss()">
+
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div>
+
+          <div>
+            <div>
+              <h4> id del recolector = {{miObjeto1.recolectorId}}</h4>
+
+
+              <input class="form-control" type="number" id="recolectorId" [(ngModel)]="recolectorId" name="recolectorId"
+                required>
+            </div>
+          </div>
+
+
+
+          <div class="row justify-content-start mt-4">
+            <div class="col-4">
+              <div>
+                <h4>granjeroId == {{miObjeto1.granjeroId}} </h4>
+
+
+
+                <select class="form-control">
+                  <option *ngFor="let dat of data"> id del granjero {{dat.granjeroId}} nombre del granjero
+                    {{dat.nombre}} </option>
+                </select>
+
+
+                <input class="form-control" type="text" id="granjeroId" [(ngModel)]="granjeroId" name="granjeroId"
+                  required>
+
+
+
+
+
+
+              </div>
+            </div>
+            <div class="col-4">
+              <div>
+                <h4>nombre = {{ miObjeto1.nombre }}</h4>
+
+                <input class="form-control" type="text" id="nombre1" [(ngModel)]="nombre1" name="nombre1" required>
+              </div>
+            </div>
+            <div class="col-4">
+              <div>
+                <h4>apellido = {{miObjeto1.apellido}}</h4>
+
+                <input class="form-control" type="text" id="apellido" [(ngModel)]="apellido" name="apellido" required>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" type="submit">actualizar</button>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss()">cancelar</button>
+
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+
+<ng-template #recolector let-modal style="width: 110%;">
+
+
+  <form (ngSubmit)="agregarRecolector()">
+    <div>
+
+      <div class="modal-header">
+
+        <h4> agregar un recolector </h4>
+        <button type="button" class="bi bi-x-lg" (click)="modal.dismiss()">
+
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div>
+
+          <div class="container" style="width: 150%;">
+
+            <div class="row justify-content-start">
+              <div class="col-4">
+                <div>
+
+                  <h4> granjero id</h4>
+
+                  
+                <select class="form-control" >
+                  <option *ngFor="let dat of data" > id del granjero {{dat.granjeroId}} nombre del granjero  {{dat.nombre}} </option>
+                </select>
+
+
+                  <input class="form-control" type="number" id="granjeroId" [(ngModel)]="granjeroId" name="granjeroId"
+                    required>
+
+
+
+                </div>
+              </div>
+              <div class="col-4">
+                <div>
+
+                  <h4> Nombre</h4>
+
+                  <input class="form-control" type="text" id="nombre1" [(ngModel)]="nombre1" name="nombre1" required>
+                </div>
+              </div>
+              
+
+
+
+            </div>
+
+            <div class="row justify-content-start" style="margin-top:5%">
+             
+              <div class="col-4">
+                <div>
+
+                  <h4> Apellido</h4>
+
+                  <input class="form-control" type="text" id="apellido" [(ngModel)]="apellido" name="apellido" required>
+                </div>
+              </div>
+
+
+
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" type="submit">agregar</button>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss()">cancelar</button>
+
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+
+
+
+<!-- aqui empieza los formularios de estado -->
+
+
+<ng-template #estado let-modal style="width: 110%;">
+
+
+  <form (ngSubmit)="actualizarEstado()">
+    <div>
+
+      <div class="modal-header">
+
+        <h4> actualizar un estado</h4>
+        <button type="button" class="bi bi-x-lg" (click)="modal.dismiss()">
+
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div>
+
+          <div class="container" style="width: 150%;">
+
+
+            <div class="row justify-content-start">
+              <div class="col-4">
+                <div>
+
+                  <h4> Id del estado = {{miObjeto1.estadoId}} </h4>
+
+                  <input class="form-control" type="text" id="estadoId" [(ngModel)]="estadoId" name="estadoId" required>
+
+
+
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <div class="row justify-content-start">
+              <div class="col-4">
+                <div>
+
+                  <h4> Nombre = {{miObjeto1.nombre}}</h4>
+
+                  <input class="form-control" type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+
+
+
+                </div>
+              </div>
+              <div class="col-4">
+                <div>
+
+                  <h4> descripcion = {{miObjeto1.descripcion}}</h4>
+
+                  <input class="form-control" type="text" id="descripcion" [(ngModel)]="descripcion" name="descripcion"
+                    required>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" type="submit">actulizar</button>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss()">cancelar</button>
+
+      </div>
+    </div>
+  </form>
+</ng-template>
+
+
+
+<ng-template #estadoagregar let-modal style="width: 110%;">
+
+
+  <form (ngSubmit)="agregarEstado()">
+    <div>
+
+      <div class="modal-header">
+
+        <h4> agregar un estado nuevo </h4>
+        <button type="button" class="bi bi-x-lg" (click)="modal.dismiss()">
+
+
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div>
+
+          <div class="container" style="width: 150%;">
+
+            <div class="row justify-content-start">
+              <div class="col-4">
+                <div>
+
+                  <h4> Nombre</h4>
+
+                  <input class="form-control" type="text" id="nombre" [(ngModel)]="nombre" name="nombre" required>
+
+
+
+                </div>
+              </div>
+              <div class="col-4">
+                <div>
+
+                  <h4> descripcion</h4>
+
+                  <input class="form-control" type="text" id="descripcion" [(ngModel)]="descripcion" name="descripcion"
+                    required>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" type="submit">agregar</button>
+        <button type="button" class="btn btn-danger" (click)="modal.dismiss()">cancelar</button>
+
+      </div>
+    </div>
+  </form>
+</ng-template>
